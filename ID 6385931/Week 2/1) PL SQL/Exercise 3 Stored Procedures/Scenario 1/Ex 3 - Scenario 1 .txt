@@ -1,0 +1,27 @@
+CREATE TABLE SavingsAccounts
+(
+  account_id int,
+  balance float
+);
+ 
+SET SERVEROUTPUT ON;
+INSERT INTO SavingsAccounts VALUES (101, 10000);
+INSERT INTO SavingsAccounts VALUES (102, 5000);
+
+CREATE OR REPLACE PROCEDURE ProcessMonthlyInterest is
+BEGIN
+  UPDATE SavingsAccounts
+    SET balance=balance+(balance*0.01);
+    for i in (SELECT acCount_id,balance from SavingsAccounts) LOOP
+    DBMS_OUTPUT.PUT_LINE(i.account_id || ' Monthly Interest of 1% has been added ' || 'new balance: ' || TO_CHAR(i.balance));
+    END LOOP;
+    COMMIT;
+END;
+/
+
+BEGIN
+  ProcessMonthlyInterest;
+END;
+/
+SELECT * FROM SavingsAccounts;
+ 

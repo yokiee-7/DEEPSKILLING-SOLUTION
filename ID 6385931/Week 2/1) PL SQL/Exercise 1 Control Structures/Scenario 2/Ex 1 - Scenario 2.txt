@@ -1,0 +1,32 @@
+CREATE TABLE Customers (
+  customer_id INT,
+  balance FLOAT,
+  isVIP VARCHAR2(5)
+);
+
+INSERT INTO Customers VALUES (1, 8000, NULL);
+INSERT INTO Customers VALUES (2, 15000, NULL);
+INSERT INTO Customers VALUES (3, 12000, NULL);
+
+
+DECLARE
+ Cursor c_Customers IS
+ select customer_id,balance from Customers;
+ 
+ BEGIN 
+ for i in c_Customers LOOP
+ if i.balance>10000 then
+ update Customers 
+ SET isVIP='true'
+ where customer_id=i.customer_id;
+ else
+ update Customers 
+ set isVIP='false'
+ where customer_id=i.customer_id;
+ END if;
+ END LOOP;
+ COMMIT;
+END;
+/
+SELECT * FROM Customers;
+

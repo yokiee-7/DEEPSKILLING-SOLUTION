@@ -1,0 +1,43 @@
+CREATE TABLE Accounts
+(
+  account_id int primary key,
+  balance float
+);
+
+INSERT INTO Accounts VALUES(1,3000);
+INSERT INTO Accounts VALUES(2,5000);
+set SERVEROUTPUT ON;
+CREATE OR REPLACE PROCEDURE TransferFunds
+(
+    from_acc in int,
+    to_acc in int,
+    amount in float
+)
+is
+v_balance float;
+
+BEGIN
+  select balance into v_balance FROM Accounts where account_id=from_acc;
+  
+  if v_balance>=amount then
+    update Accounts
+    set balance=balance-amount
+    where account_id=from_acc;
+    
+    update Accounts
+    set balance=balance+amount
+    where account_id=to_acc;
+    
+    dbms_output.put_line(amount || ' is transferred from Account ' || from_acc || ' to Account ' || to_acc);
+    commit;
+  
+  else
+  dbms_output.put_line('Insufficient Balance in account '|| from_acc);
+  end if;
+  end;
+/
+
+BEGIN
+    TransferFunds(1,2,2000);
+end;
+/

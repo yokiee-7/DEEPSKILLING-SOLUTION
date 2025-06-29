@@ -1,0 +1,25 @@
+CREATE TABLE Customers (
+  customer_id INT,
+  age INT,
+  interest_rate FLOAT
+);
+
+INSERT INTO Customers VALUES (1, 65, 5.0);
+INSERT INTO Customers VALUES (2, 58, 6.0);
+INSERT INTO Customers VALUES (3, 70, 4.5);
+
+DECLARE
+  CURSOR c_customers IS 
+    SELECT customer_id, age, interest_rate FROM Customers;
+BEGIN 
+  FOR i IN c_customers LOOP
+    IF i.age > 60 THEN
+      UPDATE Customers
+      SET interest_rate = interest_rate - (interest_rate * 0.01)
+      WHERE customer_id = i.customer_id;
+      dbms_output.put_line('customer_id ' || i.customer_id || ' got a 1% discount');
+    END IF;
+  END LOOP;
+  COMMIT;
+END;
+/
