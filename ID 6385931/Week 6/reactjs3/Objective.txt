@@ -1,0 +1,57 @@
+⚛️ React Components — Simply Explained
+React components are reusable pieces of UI—like Lego blocks. They let you split complex interfaces into manageable parts.
+
+-------------------------------------------------------------------------------------------------------------------
+
+🔍 Components vs JavaScript Functions
+JavaScript functions: Perform logic and return data.
+
+React components: Return JSX (UI), manage state, and respond to user interaction.
+
+-------------------------------------------------------------------------------------------------------------------
+
+🧩 Types of Components
+Class Components – Use ES6 classes, include lifecycle methods
+
+Function Components – Simpler, use hooks for state and logic
+
+-------------------------------------------------------------------------------------------------------------------
+
+🏛️ Class Component
+A class-based component extends React.Component, can hold state and use lifecycle methods like componentDidMount().
+
+js
+class MyComponent extends React.Component {
+  render() {
+    return <h1>Hello!</h1>;
+  }
+}
+-------------------------------------------------------------------------------------------------------------------
+
+✨ Function Component
+A function that returns JSX. Lighter and faster. Hooks like useState() make them powerful.
+
+code
+function MyComponent() {
+  return <h1>Hello!</h1>;
+}
+-------------------------------------------------------------------------------------------------------------------
+
+🛠️ Component Constructor
+Used in class components to initialize state and bind events. Called before the component mounts.
+
+code
+constructor(props) {
+  super(props);
+  this.state = { count: 0 };
+}
+-------------------------------------------------------------------------------------------------------------------
+
+🎨 render() Function
+Mandatory in class components. It returns the JSX that should appear on the screen.
+
+js
+render() {
+  return <div>{this.state.count}</div>;
+}
+-------------------------------------------------------------------------------------------------------------------

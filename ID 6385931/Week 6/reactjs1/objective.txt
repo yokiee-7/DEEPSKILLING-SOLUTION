@@ -1,0 +1,55 @@
+⚛️ React Components
+Reusable building blocks for creating UI
+
+Can be either class-based or function-based
+
+Return JSX to describe what should appear on screen
+-------------------------------------------------------------------------------------------------------------------
+
+🔍 Components vs JavaScript Functions
+JS functions return data based on logic
+
+React components return JSX (UI) and can manage state and props
+
+-------------------------------------------------------------------------------------------------------------------
+
+🧩 Types of Components
+Class Components: Use ES6 classes, support lifecycle methods
+
+Function Components: Lightweight, use React Hooks for logic
+
+-------------------------------------------------------------------------------------------------------------------
+
+🏛️ Class Component
+Defined using class keyword and React.Component
+
+Has lifecycle methods like componentDidMount
+
+Uses a render() method to return JSX
+
+-------------------------------------------------------------------------------------------------------------------
+
+✨ Function Component
+Simple JavaScript functions that return JSX
+
+Can use Hooks like useState() and useEffect()
+
+No need for class or render() method
+
+-------------------------------------------------------------------------------------------------------------------
+
+🛠️ Component Constructor
+Used only in class components
+
+Initializes state and binds events
+
+Called once when the component is created
+-------------------------------------------------------------------------------------------------------------------
+
+🎨 render() Function
+Present only in class components
+
+Returns the JSX to be rendered in the browser
+
+Run-------------------------------------------------------------------------------------------------------------------
+s every time the component re-renders

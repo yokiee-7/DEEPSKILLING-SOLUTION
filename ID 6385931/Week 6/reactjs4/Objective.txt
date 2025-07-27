@@ -1,0 +1,32 @@
+🔧 Need & Benefits of Component Lifecycle
+
+Controls behavior at each phase (create, update, destroy)
+
+Optimizes performance, debugging, and resource management
+
+-------------------------------------------------------------------------------------------------------------------
+
+🔧 Key Lifecycle Hooks (Angular)
+ngOnInit() – Initialization logic
+
+ngOnChanges() – Reacts to input changes
+
+ngDoCheck() – Custom change detection
+
+ngAfterViewInit() – View is fully loaded
+
+ngOnDestroy() – Cleanup before removal
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+🌀 Rendering Steps
+Constructor runs
+
+Input bindings set
+
+Lifecycle hooks execute (ngOnChanges, ngOnInit, etc.)
+
+Template renders
+
+Cleanup with ngOnDestroy
