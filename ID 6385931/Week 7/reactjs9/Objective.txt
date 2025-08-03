@@ -1,0 +1,25 @@
+Q: What are the key features of ES6? 
+Block-scoped variables (let, const), arrow functions, classes, modules, promises, destructuring, spread/rest operators, map(), set().
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q: What is JavaScript let used for?
+Declares variables with block-level scope. Safer than var for modern coding.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q: What’s the difference between var and let?
+var is function-scoped and gets hoisted. let is block-scoped and doesn’t allow redeclaration.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q: What does const do in JavaScript?
+Declares a constant value that can’t be reassigned.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q: What are ES6 class fundamentals?
+Use class to create blueprints for objects with a constructor and methods.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q: How does ES6 class inheritance work?
+One class can extend another using extends, allowing property/method sharing.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q: What is an ES6 arrow function?
+A shorter way to write functions: const add = (a, b) => a + b;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q: What are set() and map() in ES6?
+set() stores unique values — no duplicates.
+map() transforms each element in an array and returns a new array.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
