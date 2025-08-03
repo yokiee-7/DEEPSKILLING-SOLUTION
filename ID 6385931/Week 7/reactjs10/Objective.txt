@@ -1,0 +1,46 @@
+Q1: What is JSX in React?
+JSX stands for JavaScript XML. It allows you to write HTML-like code in your JavaScript files to describe what the UI should look like. It makes React components more readable and intuitive.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q2: What is ECMAScript (ES)?
+ECMAScript is the standardized version of JavaScript defined by ECMA International. It's what ensures consistency across browsers. ES6 and beyond introduced features like let, const, arrow functions, classes, and modules.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q3: What is React.createElement()? 
+It’s a method used by React to create virtual DOM elements. JSX gets compiled into React.createElement() calls under the hood. So if you're not using JSX, you'd write something like:
+
+jsx code
+React.createElement('h1', null, 'Hello World')
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q4: How do you create React nodes using JSX? 
+You just write HTML-like elements inside your JavaScript code, like so:
+
+jsx code
+const title = <h2>This is a node</h2>;
+This will be converted by React into React.createElement() calls to create virtual nodes.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q5: How do you render JSX to the DOM? 
+Use the ReactDOM.render() function to attach JSX to the real DOM element:
+
+jsx code
+ReactDOM.render(<App />, document.getElementById('root'));
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q6: How do you use JavaScript expressions in JSX? 
+Wrap JavaScript expressions in {} within your JSX code. For example:
+
+jsx code
+const name = "Alex";
+const greet = <h3>Hello, {name}!</h3>;
+This will output: Hello, Alex!
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q7: How do you apply inline CSS in JSX? 
+Inline styles in JSX use a JS object with camelCase properties. Example:
+
+jsx code
+const styles = { color: "red", backgroundColor: "black" };
+const heading = <h1 style={styles}>Styled Text</h1>;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

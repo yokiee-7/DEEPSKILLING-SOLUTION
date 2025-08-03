@@ -1,0 +1,127 @@
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+🔀 Various Ways of Conditional Rendering in React
+React lets you render UI based on conditions using JavaScript expressions:
+
+Ternary Operator
+
+jsx
+{isLoggedIn ? <Dashboard /> : <LoginScreen />}
+Logical AND (&&)
+
+jsx
+{hasNotifications && <NotificationPanel />}
+if Statements inside Functions
+
+jsx
+function greetUser(user) {
+  if (user) {
+    return <h1>Welcome back!</h1>;
+  }
+  return <h1>Please sign in.</h1>;
+}
+Element Variables Store JSX in a variable based on conditions.
+
+jsx
+let button = isSubscribed ? <Unsubscribe /> : <Subscribe />;
+return <div>{button}</div>;
+Returning null Prevent rendering when conditions aren't met.
+
+jsx
+if (!isVisible) return null;
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎛️ How to Render Multiple Components
+You can render multiple components in one return block:
+
+Using a fragment:
+
+jsx
+return (
+  <>
+    <Header />
+    <MainContent />
+    <Footer />
+  </>
+);
+Or with a div wrapper:
+
+jsx
+return (
+  <div>
+    <Profile />
+    <Settings />
+  </div>
+);
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📜 What is a List Component?
+A list component in React displays a collection of items, often from an array.
+
+Example:
+
+jsx
+function FruitList({ fruits }) {
+  return (
+    <ul>
+      {fruits.map(fruit => <li key={fruit.id}>{fruit.name}</li>)}
+    </ul>
+  );
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+🏷️ What are Keys in React Applications?
+Keys help React identify which items have changed, are added, or removed.
+
+They must be unique and stable within the list.
+
+Best Practice:
+
+jsx
+<li key={item.id}>{item.name}</li>
+Avoid using indexes unless items don’t change order or get modified.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 How to Extract Components with Keys
+You can modularize lists by extracting each item into a separate component:
+
+jsx
+function FruitItem({ name }) {
+  return <li>{name}</li>;
+}
+
+function FruitList({ fruits }) {
+  return (
+    <ul>
+      {fruits.map(fruit => (
+        <FruitItem key={fruit.id} name={fruit.name} />
+      ))}
+    </ul>
+  );
+}
+This keeps your code cleaner and easier to maintain.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 React Map and the map() Function
+React leverages JavaScript’s map() to iterate over arrays.
+
+It’s used to render lists dynamically.
+
+Example:
+
+jsx
+const products = [
+  { id: 1, name: 'Shoes' },
+  { id: 2, name: 'Hat' },
+];
+
+const productList = products.map(product =>
+  <li key={product.id}>{product.name}</li>
+);
+React reuses and updates elements using keys efficiently during reconciliation.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,29 @@
+Q1: What are React events?
+React events are just like DOM events (e.g., click, change), but they work across all browsers and follow React's conventions. They help manage user interactions in a React application.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q2: What are event handlers in React? 
+Event handlers are functions that respond to events. In React, you assign them directly inside JSX, like:
+
+jsx code
+function handleClick() {
+  alert('Button clicked!');
+}
+<button onClick={handleClick}>Click Me</button>
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q3: What is a Synthetic Event in React? 
+A Synthetic Event is React's wrapper around the browser's native event. It mimics the native event and gives consistent behavior across browsers. It also supports React’s event pooling system to optimize performance.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q4: What is the naming convention for React events? 
+React uses camelCase for event names instead of lowercase like in HTML. Also, the event handler is passed as a function, not a string. For example:
+
+jsx code
+<input onChange={handleChange} />
+Not like this:
+
+html
+<input onchange="handleChange()" />
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

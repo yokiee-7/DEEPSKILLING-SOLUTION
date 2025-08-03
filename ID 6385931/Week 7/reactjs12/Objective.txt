@@ -1,0 +1,38 @@
+Q1: What is Conditional Rendering in React? 
+Conditional rendering means displaying different UI elements depending on certain conditions, like user login status or data availability.
+
+Example:
+
+jsx
+{isLoggedIn ? <Dashboard /> : <LoginScreen />}
+React uses regular JavaScript conditions (if, ternary, logical &&) to decide what to render.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q2: What are Element Variables in React?
+Element variables let you store JSX in a variable and then conditionally render it.
+
+Example:
+
+jsx
+let button;
+if (isLoggedIn) {
+  button = <LogoutButton />;
+} else {
+  button = <LoginButton />;
+}
+return <div>{button}</div>;
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q3: How Do You Prevent Components from Rendering?
+You can stop a component from rendering by returning null.
+
+Example:
+
+jsx
+function WarningBanner({ show }) {
+  if (!show) return null;
+  return <div className="warning">Warning!</div>;
+}
+This approach is commonly used to hide components without breaking the layout or throwing errors.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

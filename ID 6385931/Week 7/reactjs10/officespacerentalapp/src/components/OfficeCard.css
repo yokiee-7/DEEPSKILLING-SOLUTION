@@ -1,0 +1,15 @@
+.textRed {
+  color: red;
+}
+
+.textGreen {
+  color: green;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 12px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px #aaa;
+}
